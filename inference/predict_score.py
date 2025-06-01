@@ -26,7 +26,6 @@ def ProcessData(data):
 
 def GetScore(inputfile):
     df = xml_to_dataframe([inputfile])
-    data1 = pd.read_csv('TrainingData.csv')
     df['startDate'] = pd.to_datetime(df['startDate']).dt.tz_localize(tz=None)
     df['endDate'] = pd.to_datetime(df['endDate']).dt.tz_localize(tz=None)
     # latest_date = datetime.now()
@@ -41,7 +40,6 @@ def GetScore(inputfile):
                          data.get('HeartRateVariabilitySDNN'), data.get('RestingHeartRate'))
         #model = SleepQualityRegressor()
         data['SleepGoal'] = 8.0
-        data = pd.concat([data, data1], ignore_index=True)
         X_tensor, y_tensor, x_scaler, y_scaler, retained_indices, imputed_data = preprocess_data(data)
         # with torch.no_grad():
         #     outputs = model(X_tensor)

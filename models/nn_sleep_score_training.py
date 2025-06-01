@@ -77,7 +77,7 @@ def train_score_model_dynamic(X_tensor, y_score_tensor, model, num_epochs=500, l
 
     return model
 
-data = pd.read_csv('B:\MachineLearning\TrainingData.csv')
+data = pd.read_csv('Input path here')
 data['SleepGoal'] = 8.0
 X_tensor, y_tensor, x_scaler, y_scaler, retained_indices, imputed_data = preprocess_data(data)
 

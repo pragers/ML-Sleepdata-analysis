@@ -55,7 +55,7 @@ def TrainModel(data,Epochs):
     data.loc[retained_indices, ["NextDayHRVPred", "NextDayHeartRatePred"]] = predictions
     torch.save(model, 'full_model1.pth')
     data.to_csv('DataTestWPred.csv')
-GetSleepData('B:\MachineLearning\ExportTestSleepScore.xml').to_csv(f'B:/MachineLearning/outputs/sleepdata_{datetime.now().date()}.csv',index=False)
+
 # data1 = pd.read_csv('../outputs/Test.csv')
 # data2 = pd.read_csv('../outputs/Test1.csv')
 # TotalData = pd.concat([data1,data2],ignore_index=True)

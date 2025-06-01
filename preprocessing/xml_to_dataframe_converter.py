@@ -1,9 +1,6 @@
 import pandas as pd
 from lxml import etree
 
-import pandas as pd
-from lxml import etree
-
 
 def xml_to_dataframe(input_files, tag='Record'):
     all_rows = []
